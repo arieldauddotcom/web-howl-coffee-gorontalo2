@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Howl Coffee Gorontalo2</title>
+    <meta name="description" content="howl ada tempat kalcer ">
+    <link rel="icon" href="./logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+    :root {
+      --primary: #ff00d0;
+      --primary-hover: #ff00d0dd;
+      --secondary: #66748a;
+    }
+    .bg-primary { background-color: var(--primary); }
+    .text-primary { color: var(--primary); }
+    .border-primary { border-color: var(--primary); }
+    .hover-bg-primary:hover { background-color: var(--primary-hover); }
+    .bg-secondary { background-color: var(--secondary); color: white; }
+   body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="text-slate-800 antialiased overflow-x-hidden">
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <img src="./logo.png" alt="Logo" class="h-10">
+            <div class="hidden md:flex gap-8 items-center"><a href="#sec_1" class="text-slate-600 hover:text-primary font-medium transition">Home</a><a href="#sec_2" class="text-slate-600 hover:text-primary font-medium transition">Tentang Kami</a></div>
+        </div>
+    </nav>
+    
+      <section id="sec_1" class="pt-32 pb-20 px-6 bg-white">
+          <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+              <div class="md:w-1/2">
+                  <h1 class="text-5xl md:text-6xl font-extrabold leading-tight text-slate-900 mb-6">Howl Coffee Gorontalo</h1>
+                  <p class="text-lg text-slate-600 mb-8">sadfasdfsaf</p>
+              </div>
+              <div class="md:w-1/2"><img src="./img_sec_1.jpg" class="w-full rounded-2xl shadow-xl object-cover" alt="Gambar"></div>
+          </div>
+      </section>
+      <section id="sec_2" class="py-20 px-6 bg-slate-50">
+          <div class="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center gap-12">
+              <div class="md:w-1/2">
+                  <h2 class="text-3xl font-bold text-slate-900 mb-6">sasfasfasfas</h2>
+                  <p class="text-lg text-slate-600 leading-relaxed whitespace-pre-line">zzzzzzzzzzzzzzzzzzzdasdasdasd</p>
+              </div>
+              
+          </div>
+      </section>
+    <footer class="bg-slate-900 py-8 text-center text-slate-500">
+        <p>&copy; 2026 Howl Coffee Gorontalo2. Hak Cipta Dilindungi.</p>
+    </footer>
+    <script>
+    const form = document.getElementById('form-pesan');
+    if(form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault(); const btn = document.getElementById('btn-submit'); btn.innerText = "Mengirim..."; btn.disabled = true;
+        try {
+          await fetch("https://script.google.com/macros/s/AKfycbwERXba9E86v2tZ6pQPIOHO72Nq5h9FHhMDF7nNXhf5B46HbOzPqH0YtvSie9DA1dlz/exec", { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({ action: "submit_lead", sumber_web: "Howl Coffee Gorontalo2", nama_pengunjung: document.getElementById('nama_pengunjung').value, wa_pengunjung: document.getElementById('wa_pengunjung').value, pesan: document.getElementById('pesan_pengunjung').value })
+          }); alert("Pesan terkirim!"); form.reset();
+        } catch (err) { alert("Gagal mengirim pesan."); } btn.innerText = "Kirim Pesan Sekarang"; btn.disabled = false;
+      });
+    }
+  </script>
+</body>
+</html>
